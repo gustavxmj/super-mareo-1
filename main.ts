@@ -124,7 +124,7 @@ function make_ghost () {
     true
     )
     tiles.placeOnRandomTile(ghost, assets.tile`myTile2`)
-    ghost.follow(MAREO, 80)
+    ghost.follow(MAREO, 40)
 }
 function make_stare () {
     stare = sprites.create(img`
@@ -299,7 +299,7 @@ function make_ghost2 () {
     true
     )
     tiles.placeOnRandomTile(ghost, assets.tile`myTile0`)
-    ghost.follow(MAREO, 85)
+    ghost.follow(MAREO, 45)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
