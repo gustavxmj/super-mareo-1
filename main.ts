@@ -124,7 +124,8 @@ function make_ghost () {
     true
     )
     tiles.placeOnRandomTile(ghost, assets.tile`myTile2`)
-    ghost.follow(MAREO, 35)
+    ghost.follow(MAREO, 10)
+    ghost.setFlag(SpriteFlag.GhostThroughWalls, true)
 }
 function make_stare () {
     stare = sprites.create(img`
@@ -174,7 +175,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     game.gameOver(true)
 })
 function make_ghost2 () {
-    ghost = sprites.create(img`
+    ghost_2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -193,7 +194,7 @@ function make_ghost2 () {
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Enemy)
     animation.runImageAnimation(
-    ghost,
+    ghost_2,
     [img`
         ........................
         ........................
@@ -298,12 +299,13 @@ function make_ghost2 () {
     100,
     true
     )
-    tiles.placeOnRandomTile(ghost, assets.tile`myTile0`)
-    ghost.follow(MAREO, 15)
+    tiles.placeOnRandomTile(ghost_2, assets.tile`myTile0`)
+    ghost_2.follow(MAREO, 20)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
 })
+let ghost_2: Sprite = null
 let stare: Sprite = null
 let MAREO: Sprite = null
 let ghost: Sprite = null
