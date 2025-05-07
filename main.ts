@@ -124,7 +124,7 @@ function make_ghost () {
     true
     )
     tiles.placeOnRandomTile(ghost, assets.tile`myTile2`)
-    ghost.follow(MAREO, 10)
+    ghost.follow(MAREO, 15)
     ghost.setFlag(SpriteFlag.GhostThroughWalls, true)
 }
 function make_stare () {
@@ -300,7 +300,7 @@ function make_ghost2 () {
     true
     )
     tiles.placeOnRandomTile(ghost_2, assets.tile`myTile0`)
-    ghost_2.follow(MAREO, 20)
+    ghost_2.follow(MAREO, 30)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
